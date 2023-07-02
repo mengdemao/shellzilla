@@ -24,4 +24,6 @@ dist-ssr
 *.sw?
 node_modules
 .vscode
+src-tauri/target/*
+
 
