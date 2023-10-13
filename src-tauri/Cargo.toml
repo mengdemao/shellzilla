@@ -1,0 +1,19 @@
+[package]
+name = "shellzilla"
+version = "1.0.0"
+description = "IOT device"
+authors = ["mengdemao"]
+license = "Apache-2.0"
+repository = "https://github.com/mengdemao/shellzilla.git"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.5", features = ["shell-open"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
