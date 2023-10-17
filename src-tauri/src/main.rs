@@ -8,8 +8,21 @@ fn greet(name: &str) -> String {
 }
 
 fn main() {
-    tauri::Builder::default()
+    let _ = tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+    
+    // 设置webview打印信息
+    use tauri::Manager;   
+    let _ = tauri::Builder::default()
+        .setup(|app| {
+          #[cfg(debug_assertions)] // only include this code on debug builds
+          {
+            let window = app.get_window("main").unwrap();
+            window.open_devtools();
+            window.close_devtools();
+          }
+          Ok(())
+        });
 }
