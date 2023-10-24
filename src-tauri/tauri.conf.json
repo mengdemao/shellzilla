@@ -14,10 +14,10 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://releases.myapp.com/{{target}}/{{arch}}/{{current_version}}"
+        "https://github.com/mengdemao/shellzilla/releases/download/updater/shellzilla.json"
       ],
       "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDEwQjRDMkQ4QTk3ODA4NzcKUldSM0NIaXAyTUswRU1aUWIzT2hRc2taUlY2L09jYUY3MmVOcXB6ak5qY2dIalFMWHBsSExNSVoK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDVFOEJGQ0U3OTZEOUM1NgpSV1JXbkcxNXpyL29CWDNCVjIybkNydGR6Z1pNYWNUampSc0pCemxEdXJOK1hrRlVKSEhZWGZhRgo="
     },
     "allowlist": {
       "all": false,
