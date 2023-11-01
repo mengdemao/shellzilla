@@ -20,10 +20,20 @@
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDVFOEJGQ0U3OTZEOUM1NgpSV1JXbkcxNXpyL29CWDNCVjIybkNydGR6Z1pNYWNUampSc0pCemxEdXJOK1hrRlVKSEhZWGZhRgo="
     },
     "allowlist": {
-      "all": false,
+      "all": true,
       "shell": {
-        "all": false,
+        "all": true,
+        "execute": true,
+        "sidecar": true,
         "open": true
+      },
+      "dialog": {
+        "all": true,
+        "ask": true,
+        "confirm": true,
+        "message": true,
+        "open": true,
+        "save": true
       }
     },
     "bundle": {

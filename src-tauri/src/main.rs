@@ -7,11 +7,20 @@ fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
+mod menu;
+
 fn main() {
+    let context = tauri::generate_context!();
+    let _ = tauri::Builder::default()
+        .menu(menu::init(&context))
+        .on_menu_event(menu::handler)
+        .run(context)
+        .expect("error while running OhMyBox application");
+
     let _ = tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .expect("error while running shellzilla application");
     
     // 设置webview打印信息
     use tauri::Manager;   
