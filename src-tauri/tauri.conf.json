@@ -37,6 +37,18 @@
       }
     },
     "bundle": {
+      "category": "Utility",
+      "shortDescription": "多功能调试接口",
+      "longDescription": "shellzilla 多功能调试借口",
+      "windows": {
+        "wix": {
+          "language": "zh-CN"
+        },
+        "nsis": {
+          "languages": ["SimpChinese", "English"],
+          "displayLanguageSelector": true
+        }
+      },
       "active": true,
       "targets": "all",
       "identifier": "com.shellzilla.dev",

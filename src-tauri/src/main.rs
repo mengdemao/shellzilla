@@ -7,6 +7,8 @@ fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
+use tauri::Manager;
+
 mod menu;
 
 fn main() {
@@ -22,13 +24,12 @@ fn main() {
         .run(tauri::generate_context!())
         .expect("error while running shellzilla application");
     
-    // 设置webview打印信息
-    use tauri::Manager;   
+    // 设置webview打印信息 
     let _ = tauri::Builder::default()
-        .setup(|app| {
+        .setup(|__app| {
           #[cfg(debug_assertions)] // only include this code on debug builds
           {
-            let window = app.get_window("main").unwrap();
+            let window = __app.get_window("main").unwrap();
             window.open_devtools();
             window.close_devtools();
           }
