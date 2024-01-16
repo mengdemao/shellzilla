@@ -29,7 +29,6 @@
     "@types/lodash": "^4.14.180",
     "@types/lodash-es": "^4.17.7",
     "@vitejs/plugin-vue": "^4.2.3",
-    "@vue/devtools": "^6.5.1",
     "husky": "^8.0.3",
     "node-fetch": "^3.3.2",
     "prettier": "^2.7.1",
