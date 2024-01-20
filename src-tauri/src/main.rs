@@ -1,6 +1,8 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use tauri::Manager;
+
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -27,7 +29,7 @@ fn main() {
         .setup(|_app| {
           #[cfg(debug_assertions)] // only include this code on debug builds
           {
-            let window = app.get_window("main").unwrap();
+            let window = _app.get_window("main").unwrap();
             window.open_devtools();
             window.close_devtools();
           }
