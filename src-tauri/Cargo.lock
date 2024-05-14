@@ -3261,6 +3261,7 @@ dependencies = [
 name = "shellzilla"
 version = "1.0.0"
 dependencies = [
+ "libc",
  "log",
  "serde",
  "serde_json",
