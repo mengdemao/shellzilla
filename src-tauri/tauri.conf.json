@@ -1,64 +1,47 @@
 {
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "shellzilla",
+  "version": "0.1.0",
+  "identifier": "com.shellzilla.app",
   "build": {
     "beforeDevCommand": "yarn dev",
+    "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "yarn build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist",
-    "withGlobalTauri": false
+    "frontendDist": "../dist"
   },
-  "package": {
-    "productName": "shellzilla",
-    "version": "../package.json"
-  },
-  "tauri": {
-    "updater": {
-      "active": true,
-      "endpoints": [
-        "https://github.com/mengdemao/shellzilla/releases/download/updater/shellzilla.json"
-      ],
-      "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDVFOEJGQ0U3OTZEOUM1NgpSV1JXbkcxNXpyL29CWDNCVjIybkNydGR6Z1pNYWNUampSc0pCemxEdXJOK1hrRlVKSEhZWGZhRgo="
-    },
-    "allowlist": {
-      "all": true,
-      "shell": {
-        "all": true,
-        "execute": true,
-        "sidecar": true,
-        "open": true
-      },
-      "dialog": {
-        "all": true,
-        "ask": true,
-        "confirm": true,
-        "message": true,
-        "open": true,
-        "save": true
-      }
-    },
-    "bundle": {
-      "active": true,
-      "targets": "all",
-      "identifier": "com.shellzilla.dev",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
-    },
-    "security": {
-      "csp": null
-    },
+  "app": {
     "windows": [
       {
-        "fullscreen": false,
-        "resizable": true,
         "title": "shellzilla",
         "width": 800,
         "height": 600
       }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
     ]
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDVFOEJGQ0U3OTZEOUM1NgpSV1JXbkcxNXpyL29CWDNCVjIybkNydGR6Z1pNYWNUampSc0pCemxEdXJOK1hrRlVKSEhZWGZhRgo=",
+      "endpoints": [
+        "https://github.com/mengdemao/shellzilla/releases/download/updater/shellzilla.json"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
   }
 }

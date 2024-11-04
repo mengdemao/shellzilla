@@ -12,4 +12,7 @@ $ yarn tauri dev
 
 # 构建文件
 $ yarn tauri build
+
+# 更新依赖文件
+$ yarn upgrade --latest
 ```
