@@ -1,158 +1,173 @@
-<script setup>
-import { ref } from "vue";
-import { invoke } from "@tauri-apps/api/core";
-
-const greetMsg = ref("");
-const name = ref("");
-
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  greetMsg.value = await invoke("greet", { name: name.value });
-}
-</script>
-
 <template>
-  <main class="container">
-    <h1>Welcome to Tauri + Vue</h1>
+  <div :class="{ 'dark-mode': darkMode }">
+    <header>
+      <h1>Tauri + Vue.js + Monaco Editor</h1>
+      <p>功能完整的代码编辑器桌面应用</p>
+    </header>
 
-    <div class="row">
-      <a href="https://vitejs.dev" target="_blank">
-        <img src="/vite.svg" class="logo vite" alt="Vite logo" />
-      </a>
-      <a href="https://tauri.app" target="_blank">
-        <img src="/tauri.svg" class="logo tauri" alt="Tauri logo" />
-      </a>
-      <a href="https://vuejs.org/" target="_blank">
-        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-      </a>
-    </div>
-    <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
+    <main>
+      <div class="editor-wrapper">
+        <MonacoEditor v-model="code" />
+      </div>
 
-    <form class="row" @submit.prevent="greet">
-      <input id="greet-input" v-model="name" placeholder="Enter a name..." />
-      <button type="submit">Greet</button>
-    </form>
-    <p>{{ greetMsg }}</p>
-  </main>
+      <div class="preview">
+        <h3>代码预览</h3>
+        <pre>{{ code }}</pre>
+      </div>
+    </main>
+
+    <footer>
+      <button @click="toggleTheme">
+        {{ darkMode ? "切换到亮色主题" : "切换到暗色主题" }}
+      </button>
+      <p>使用 Tauri、Vue.js 和 Monaco Editor 构建</p>
+    </footer>
+  </div>
 </template>
 
-<style scoped>
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
+<script>
+import MonacoEditor from "./components/editor.vue";
+import { ref } from "vue";
+
+export default {
+  components: {
+    MonacoEditor,
+  },
+  setup() {
+    const code = ref(`function calculateSum(a, b) {
+  // 计算两个数字的和
+  return a + b;
 }
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #249b73);
-}
-</style>
+console.log('3 + 5 =', calculateSum(3, 5));`);
+
+    const darkMode = ref(false);
+
+    const toggleTheme = () => {
+      darkMode.value = !darkMode.value;
+      document.documentElement.style.backgroundColor = darkMode.value
+        ? "#1e1e1e"
+        : "#f5f5f7";
+    };
+
+    return {
+      code,
+      darkMode,
+      toggleTheme,
+    };
+  },
+};
+</script>
+
 <style>
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  margin: 0;
-  padding-top: 10vh;
+body,
+html,
+#app {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#app {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  background: #f5f5f7;
+  transition: background-color 0.3s;
+}
+
+.dark-mode {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+header {
   text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
-}
-
-.row {
+main {
   display: flex;
-  justify-content: center;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.editor-wrapper {
+  flex: 3;
+  min-width: 0;
 }
 
-a:hover {
-  color: #535bf2;
-}
-
-h1 {
-  text-align: center;
-}
-
-input,
-button {
+.preview {
+  flex: 1;
+  background: white;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: auto;
 }
 
-button {
+.dark-mode .preview {
+  background: #2d2d2d;
+  color: #d4d4d4;
+}
+
+.preview h3 {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.dark-mode .preview h3 {
+  border-bottom: 1px solid #444;
+}
+
+.preview pre {
+  white-space: pre-wrap;
+  font-family: "Fira Code", monospace;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+footer {
+  padding: 15px;
+  text-align: center;
+  background: #f0f0f0;
+  border-top: 1px solid #ddd;
+}
+
+.dark-mode footer {
+  background: #252526;
+  border-top: 1px solid #444;
+}
+
+footer button {
+  padding: 8px 16px;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 10px;
+  transition: background 0.3s;
 }
 
-button:hover {
-  border-color: #396cd8;
-}
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
-}
-
-input,
-button {
-  outline: none;
-}
-
-#greet-input {
-  margin-right: 5px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
-  }
-
-  a:hover {
-    color: #24c8db;
-  }
-
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
-  }
-  button:active {
-    background-color: #0f0f0f69;
-  }
+footer button:hover {
+  background: #3a5ae0;
 }
 </style>
