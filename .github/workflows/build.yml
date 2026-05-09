@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Tauri App (PR)
         if: github.event_name == 'pull_request'
-        uses: tauri-apps/tauri-action@v1
+        uses: tauri-apps/tauri-action@v0
         with:
           args: --release
 
