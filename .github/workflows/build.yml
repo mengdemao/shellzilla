@@ -48,7 +48,7 @@ jobs:
 
       - name: Build and Release (Push)
         if: github.event_name == 'push'
-        uses: tauri-apps/tauri-action@v1
+        uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
