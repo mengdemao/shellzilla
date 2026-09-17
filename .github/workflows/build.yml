@@ -44,7 +44,7 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: tauri-apps/tauri-action@v0
         with:
-          args: --release
+          args: --debug
 
       - name: Build and Release (Push)
         if: github.event_name == 'push'
