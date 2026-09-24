@@ -29,7 +29,7 @@
     "@tauri-apps/cli": "^2.0.4",
     "@types/fs-extra": "^11.0.4",
     "@types/js-cookie": "^3.0.2",
-    "@types/lodash": "^4.14.180",
+    "@types/lodash": "^4.17.25",
     "@types/lodash-es": "^4.17.7",
     "@vitejs/plugin-vue": "^6.0.0",
     "husky": "^9.1.6",
