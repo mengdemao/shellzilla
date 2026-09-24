@@ -1,0 +1,42 @@
+# .github/dependabot.yml
+version: 2
+
+updates:
+  # 前端依赖：Yarn / npm / pnpm 都使用 npm 生态
+  - package-ecosystem: "npm"
+    directory: "/"                 # package.json + yarn.lock 所在目录
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      tauri-apps:
+        patterns:
+          - "@tauri-apps/*"
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    # 如果只想更新 yarn.lock，不修改 package.json 里的版本范围：
+    # versioning-strategy: lockfile-only
+
+  # Rust 后端依赖
+  - package-ecosystem: "cargo"
+    directory: "/src-tauri"        # Cargo.toml + Cargo.lock 所在目录
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      tauri:
+        patterns:
+          - "tauri*"
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+
+  # GitHub Actions 工作流依赖，可选
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore(ci)"
+      include: "scope"
