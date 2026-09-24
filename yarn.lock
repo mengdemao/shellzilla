@@ -297,7 +297,7 @@
   resolved "https://registry.npmmirror.com/@commitlint/message/-/message-19.8.1.tgz#d5d0d87837483d9f9b4559ffa06e1aaa26d266d6"
   integrity sha512-+PMLQvjRXiU+Ae0Wc+p99EoGEutzSXFVwQfa3jRNUZLNW5odZAyseb92OSBTKCu+9gGZiJASt76Cj3dLTtcTdg==
 
-"@commitlint/parse@^19.5.0", "@commitlint/parse@^19.8.1":
+"@commitlint/parse@^19.8.1":
   version "19.8.1"
   resolved "https://registry.npmmirror.com/@commitlint/parse/-/parse-19.8.1.tgz#73125d04f07f11477cf563cbfe0cc9f6dc85a747"
   integrity sha512-mmAHYcMBmAgJDKWdkjIGq50X4yB0pSGpxyOODwYmoexxxiUCy5JJT99t1+PEMK7KtsCtzuWYIAXYAiKR+k+/Jw==
@@ -305,6 +305,15 @@
     "@commitlint/types" "^19.8.1"
     conventional-changelog-angular "^7.0.0"
     conventional-commits-parser "^5.0.0"
+
+"@commitlint/parse@^21.2.3":
+  version "21.2.3"
+  resolved "https://registry.yarnpkg.com/@commitlint/parse/-/parse-21.2.3.tgz#6c530c00e3fdb4ea574330c2b0b5ac3df6a1b335"
+  integrity sha512-Jt61QpF1xA88damCELe8I0FlDZPSpXNc8IhN7z5kZ0EcDYPjdZ+ZHPvsSXl69r2MIlLnNKeHhOn2cmVpziFE9w==
+  dependencies:
+    "@commitlint/types" "^21.2.3"
+    conventional-changelog-angular "^9.0.0"
+    conventional-commits-parser "^7.0.0"
 
 "@commitlint/read@^19.8.1":
   version "19.8.1"
@@ -1530,6 +1539,13 @@ conventional-changelog-angular@^8.0.0:
   integrity sha512-CLf+zr6St0wIxos4bmaKHRXWAcsCXrJU6F4VdNDrGRK3B8LDLKoX3zuMV5GhtbGkVR/LohZ6MT6im43vZLSjmA==
   dependencies:
     compare-func "^2.0.0"
+
+conventional-changelog-angular@^9.0.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-angular/-/conventional-changelog-angular-9.4.0.tgz#ec51393e10b5c4c99c9e79f21d6d293b26cd1314"
+  integrity sha512-HdxRxuS8bBXVIuo4V82gvSwAXT0vYQUizrjs/izmPg5JdDstr8v8I5hduGL3iQbG+o310dUDxC4+LetuS5hu9w==
+  dependencies:
+    "@conventional-changelog/template" "^1.4.0"
 
 conventional-changelog-atom@^5.0.0:
   version "5.0.0"
