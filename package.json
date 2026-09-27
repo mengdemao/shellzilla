@@ -40,7 +40,7 @@
     "typescript": "^7.0.2",
     "vite": "^7.3.5",
     "vite-plugin-svgr": "^5.2.0",
-    "vue-router": "4"
+    "vue-router": "5"
   },
   "husky": {
     "hooks": {
