@@ -22,7 +22,7 @@
     "conventional-changelog-cli": "^5.0.0",
     "element-plus": "^2.14.7",
     "monaco-editor": "^0.57.0",
-    "vue": "^3.5.43"
+    "vue": "^3.5.44"
   },
   "devDependencies": {
     "@actions/github": "^9.1.1",
