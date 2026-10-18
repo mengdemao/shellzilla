@@ -984,10 +984,10 @@
   dependencies:
     "@types/lodash" "*"
 
-"@types/lodash@*", "@types/lodash@^4.14.180", "@types/lodash@^4.17.24":
-  version "4.17.25"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.25.tgz#69765ac7bcddb0eb072961cf292524a8f5b3c2c0"
-  integrity sha512-+K1NIO8I+F9/wNulfVvu23QYd0Pe9/OCqRrim4NoYIf1VoEDL90Ve4ClzpyqBLc7NpGGWRvYNCKZ1BE/Jpf8dQ==
+"@types/lodash@*", "@types/lodash@^4.17.24", "@types/lodash@^4.17.26":
+  version "4.17.26"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.26.tgz#7f83594d70359fc4b2707e344aed9a59138d024c"
+  integrity sha512-48NWfiY6oNcKOh47Z4h+sIvwcQR91h6KPhaYKgeMIrkT2jV82Gy90SErj60vW8jQbeMSOSbhIv3bZ7JoqPPVhA==
 
 "@types/node@*":
   version "22.18.3"
@@ -2413,12 +2413,7 @@ snake-case@^3.0.4:
     dot-case "^3.0.4"
     tslib "^2.0.3"
 
-"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.2.1:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.2.tgz#79fb88d97535a21cb27162cb05d211b67acea4ab"
-  integrity sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==
-
-source-map-js@^1.2.2:
+"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.2.1, source-map-js@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.2.tgz#79fb88d97535a21cb27162cb05d211b67acea4ab"
   integrity sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==
