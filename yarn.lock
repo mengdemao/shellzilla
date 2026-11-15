@@ -420,10 +420,10 @@
   resolved "https://registry.yarnpkg.com/@conventional-changelog/template/-/template-1.4.0.tgz#30a8680f2ab8d3a60a08e86bebb33fe8f0f8f100"
   integrity sha512-aalGyl7dbB5PArRebDIX43ZvBlXrYm9uWzGJ26t+4SzJVPsOuvfILGGbw5X4yX7i50YEmJ8zvbiWnqH/AAnZqg==
 
-"@ctrl/tinycolor@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-4.2.1.tgz#a812019b163fc950eac991be4222893af5d5d021"
-  integrity sha512-Vh5uy9Y1JBMId6J1f68TMXnZrTCvNdo9Fu2k0d1YnJngR+sM5kWTKl441c/3TFs+cG0NWOjRWgQ/iaWhbYx+7A==
+"@ctrl/tinycolor@^4.2.2":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-4.3.1.tgz#665b5e1966dbf3d0da47a2848f2d9be048114004"
+  integrity sha512-miLzcPaPApfChfqxxDw7nsTA8hlU4M9GZnL3UVdaxgyRzewiYaI0lsmn72SOARHgVDlVSagTTh2zWt4OcxYmmg==
 
 "@element-plus/icons-vue@^2.3.2":
   version "2.3.2"
@@ -1673,12 +1673,12 @@ electron-to-chromium@^1.5.427:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.430.tgz#788eada5bbfda8095a95149184368a2bb4fb8e4a"
   integrity sha512-e1QEj72Y4zd8RlNZVmoTg+iCOSVwpk05IOiiQwdrkwCSVlZfPthevErhE+nckGd2YbsXfp1SkisznhGVIXP2NQ==
 
-element-plus@^2.14.7:
-  version "2.14.7"
-  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-2.14.7.tgz#2c46a1a384c8ed951e92815e90d654417986f08f"
-  integrity sha512-lrG7pZyCS+mpCNVpzxxyu5r35+T6V0hzkAeIwn7HA6to772XSTHKuYCZG51OfzlqaxGbNegLxs650zAF1j43gA==
+element-plus@^2.14.8:
+  version "2.14.8"
+  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-2.14.8.tgz#ba15099a558a041d15d8d10f36c7bdd7d39d47ff"
+  integrity sha512-Z4Br45W9b8vWKvVHSTvbS6rRKmsLjmHCPXICJR6osl35+i+S2LCBs4NN8apLBkQiUh0pzS9labK5eCS7yzDhWw==
   dependencies:
-    "@ctrl/tinycolor" "^4.2.1"
+    "@ctrl/tinycolor" "^4.2.2"
     "@element-plus/icons-vue" "^2.3.2"
     "@floating-ui/dom" "^1.8.0"
     "@popperjs/core" "npm:@sxzz/popperjs-es@^2.11.8"
